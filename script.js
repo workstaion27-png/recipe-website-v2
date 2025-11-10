@@ -1912,9 +1912,55 @@ function applyIngredientAlternatives(recipe) {
     return modifiedRecipe;
 }
 
+// Quick Preview Function
+function displayQuickPreview() {
+    const quickRecipesGrid = document.getElementById('quickRecipesGrid');
+    if (!quickRecipesGrid) return;
+    
+    // Get top 4 recipes for quick preview
+    const featuredRecipes = recipes.slice(0, 4);
+    
+    quickRecipesGrid.innerHTML = featuredRecipes.map(recipe => `
+        <div class="quick-preview-card" onclick="showRecipeDetail(${recipe.id})">
+            <div class="quick-preview-image">
+                <img src="${getRecipeImage(recipe)}" alt="${recipe.title}" 
+                     onerror="this.src='images/default-recipe.svg'"
+                     style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="quick-preview-content">
+                <h3 class="quick-preview-title">${recipe.title}</h3>
+                <div class="quick-preview-meta">
+                    <span class="quick-preview-rating">⭐ ${recipe.rating}</span>
+                    <span>⏱️ ${recipe.totalTime}min</span>
+                    <span>👥 ${recipe.servings} servings</span>
+                </div>
+                <p class="quick-preview-description">${recipe.description}</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Get recipe image (placeholder for now)
+function getRecipeImage(recipe) {
+    // You can add actual recipe images here
+    const imageMap = {
+        1: 'https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=400&h=300&fit=crop',
+        2: 'https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=400&h=300&fit=crop',
+        3: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop',
+        4: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=400&h=300&fit=crop',
+        5: 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=400&h=300&fit=crop',
+        6: 'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&h=300&fit=crop',
+        7: 'https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop',
+        8: 'https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=400&h=300&fit=crop'
+    };
+    return imageMap[recipe.id] || 'images/default-recipe.svg';
+}
+
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', () => {
     init();
     // Initialize geo features after main init
     setTimeout(initializeGeoFeatures, 500);
+    // Load quick preview recipes
+    setTimeout(displayQuickPreview, 300);
 });
