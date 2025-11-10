@@ -814,7 +814,7 @@ body {
 
 /* Recipe Card Image Enhancement */
 .recipe-card .recipe-image {
-    height: 200px;
+    height: 300px;
     border-radius: 12px 12px 0 0;
     position: relative;
     overflow: hidden;
@@ -830,7 +830,7 @@ body {
 }
 
 .recipe-card:hover .recipe-image img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 
 .recipe-card .recipe-image::before {
