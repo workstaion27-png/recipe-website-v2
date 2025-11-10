@@ -431,7 +431,25 @@ function displayRecipes(recipesToDisplay) {
     grid.innerHTML = recipesToDisplay.map(recipe => {
         // Check if recipe has an image from API
         const hasApiImage = recipe.image && recipe.image.startsWith('https://');
-        const imageStyle = hasApiImage ? `background-image: url('${recipe.image}');` : '';
+        const imageUrl = hasApiImage ? recipe.image : '';
+        const fallbackImage = 'data:image/svg+xml;base64,' + btoa(`
+            <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+                <defs>
+                    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#f0f0f0;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#e0e0e0;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <rect width="300" height="200" fill="url(#grad)"/>
+                <g transform="translate(150,100)">
+                    <circle cx="0" cy="-10" r="25" fill="#ddd" stroke="#bbb" stroke-width="2"/>
+                    <rect x="-30" y="5" width="60" height="4" rx="2" fill="#ccc"/>
+                    <rect x="-25" y="12" width="50" height="4" rx="2" fill="#c0c0c0"/>
+                    <rect x="-20" y="19" width="40" height="4" rx="2" fill="#b8b8b8"/>
+                    <text x="0" y="40" text-anchor="middle" font-family="Arial" font-size="14" fill="#888">Recipe Image</text>
+                </g>
+            </svg>
+        `);
         const apiBadge = hasApiImage ? '<div class="api-recipe-badge">🌟 Trending</div>' : '';
         
         // Add geo features
@@ -446,7 +464,8 @@ function displayRecipes(recipesToDisplay) {
         
         return `
         <div class="recipe-card" onclick="showRecipeDetail(${recipe.id})">
-            <div class="recipe-image" style="${imageStyle}">
+            <div class="recipe-image">
+                ${imageUrl ? `<img src="${imageUrl}" alt="${recipe.title}" onerror="this.src='${fallbackImage}'" style="width: 100%; height: 100%; object-fit: cover;" />` : `<img src="${fallbackImage}" alt="${recipe.title}" style="width: 100%; height: 100%; object-fit: cover;" />`}
                 ${apiBadge}
                 ${geoBadge}
                 ${tempIndicator}
