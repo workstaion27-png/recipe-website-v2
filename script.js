@@ -751,7 +751,6 @@ function showRecipeDetail(recipeId) {
         <div class="recipe-actions">
             <button onclick="printRecipe(${recipe.id})" class="btn btn-secondary">🖨️ Print Recipe</button>
             <button onclick="shareRecipe(${recipe.id})" class="btn btn-secondary">🔗 Share</button>
-            ${recipe.isApiRecipe ? '<button onclick="showApiInfo()" class="btn btn-secondary">ℹ️ API Info</button>' : ''}
         </div>
     `;
     
@@ -837,10 +836,6 @@ function shareRecipe(recipeId) {
             showNotification('📋 Recipe link copied to clipboard!', 'success');
         });
     }
-}
-
-function showApiInfo() {
-    showNotification('ℹ️ This recipe is loaded from TheMealDB.com API - a free recipe database with community-contributed content.', 'info');
 }
 
 // Close modal
