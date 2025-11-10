@@ -1200,7 +1200,7 @@ function generateStructuredData(apiMeal, cuisine, difficulty, ingredients, instr
         "keywords": `${cuisine} recipe, ${difficulty} cooking, ${apiMeal.strCategory || 'food'}`,
         "author": {
             "@type": "Organization",
-            "name": "PlateUp"
+            "name": "Recipe Website"
         },
         "datePublished": new Date().toISOString().split('T')[0],
         "prepTime": `PT${15}M`,
@@ -1386,7 +1386,7 @@ function showAdBlockerMessage() {
         <div class="ad-blocker-content">
             <h3>💡 Support Our Content</h3>
             <p>Please disable your ad blocker or whitelist our site to help us continue providing free recipes and content.</p>
-            <p>Your support allows us to maintain and improve the PlateUp experience.</p>
+            <p>Your support allows us to maintain and improve the Recipe Website experience.</p>
         </div>
     `;
     message.style.cssText = `
