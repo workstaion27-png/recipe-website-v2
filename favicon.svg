@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Background circle with gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff6b6b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4ecdc4;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="panGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="url(#bgGradient)" stroke="#fff" stroke-width="3"/>
+  
+  <!-- Cooking pan/skillet -->
+  <ellipse cx="50" cy="55" rx="18" ry="12" fill="url(#panGradient)" stroke="#2c3e50" stroke-width="1"/>
+  
+  <!-- Pan handle -->
+  <rect x="68" y="52" width="8" height="6" rx="2" fill="#2c3e50"/>
+  <rect x="76" y="53" width="4" height="4" rx="1" fill="#2c3e50"/>
+  
+  <!-- Steam lines -->
+  <path d="M 42 25 Q 40 20 42 15" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 50 22 Q 48 17 50 12" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M 58 25 Q 60 20 58 15" stroke="#ff6b6b" stroke-width="2" fill="none" stroke-linecap="round"/>
+  
+  <!-- Ingredients on pan -->
+  <circle cx="45" cy="53" r="1.5" fill="#e74c3c"/>
+  <circle cx="55" cy="57" r="1.5" fill="#f39c12"/>
+  <circle cx="50" cy="51" r="1.5" fill="#27ae60"/>
+  <circle cx="47" cy="58" r="1.5" fill="#9b59b6"/>
+  <circle cx="53" cy="52" r="1.5" fill="#e67e22"/>
+  
+  <!-- Small flame effect -->
+  <path d="M 50 35 Q 48 32 50 29 Q 52 32 50 35" fill="#ff4757" opacity="0.8"/>
+  
+  <!-- Sparkles for cooking effect -->
+  <circle cx="35" cy="30" r="1" fill="#ffd700" opacity="0.9"/>
+  <circle cx="65" cy="32" r="1" fill="#ffd700" opacity="0.9"/>
+  <circle cx="40" cy="38" r="0.8" fill="#ffd700" opacity="0.7"/>
+  <circle cx="60" cy="36" r="0.8" fill="#ffd700" opacity="0.7"/>
+</svg>

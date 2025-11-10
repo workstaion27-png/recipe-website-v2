@@ -1,0 +1,39 @@
+{
+  "name": "modern-recipe-website",
+  "version": "1.0.0",
+  "description": "Modern recipe website with API integration, SEO optimization, and AdSense monetization",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server .",
+    "build": "echo 'No build process required for vanilla JS'",
+    "test": "echo 'No tests specified'"
+  },
+  "keywords": [
+    "recipe",
+    "food",
+    "cooking",
+    "mealdb",
+    "vanilla-js",
+    "responsive",
+    "seo",
+    "adsense"
+  ],
+  "author": "Web Developer",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/username/recipe-website.git"
+  },
+  "homepage": "https://username.github.io/recipe-website",
+  "bugs": {
+    "url": "https://github.com/username/recipe-website/issues"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2",
+    "serve": "^14.0.0"
+  }
+}

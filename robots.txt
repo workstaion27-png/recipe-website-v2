@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://recipe-hub.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Block access to sensitive files
+Disallow: /config/
+Disallow: /admin/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.jpg
+Allow: /*.png
+Allow: /*.gif
+Allow: /*.svg
