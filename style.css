@@ -830,6 +830,17 @@ body {
     transition: transform 0.3s ease;
 }
 
+/* Fallback image styling */
+.recipe-card .recipe-image img[src*="default-recipe"] {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    border-radius: 12px 12px 0 0;
+}
+
+/* Add subtle animation to fallback images */
+.recipe-card .recipe-image img[src*="default-recipe"]:hover {
+    transform: scale(1.05);
+}
+
 .recipe-card:hover .recipe-image img {
     transform: scale(1.08);
 }
