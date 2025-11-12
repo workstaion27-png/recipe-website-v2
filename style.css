@@ -76,13 +76,18 @@ body {
     color: var(--primary);
     border-bottom-color: var(--primary);
 }
+/* A11y: Add focus state */
+.nav-link:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
 
 /* Hero Section */
 .hero {
     background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
     padding: 4rem 0;
     text-align: center;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .hero-content {
@@ -113,7 +118,8 @@ body {
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-primary {
@@ -124,6 +130,11 @@ body {
 .btn-primary:hover {
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
+}
+/* A11y: Add focus state */
+.btn:focus {
+    outline: 3px solid rgba(255, 107, 107, 0.5);
+    outline-offset: 2px;
 }
 
 .icon {
@@ -154,7 +165,8 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #e9ecef;
 }
 
@@ -244,7 +256,8 @@ body {
     border-radius: 10px;
     font-size: 1.1rem;
     background-color: var(--bg-white);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
     position: relative;
 }
 
@@ -270,7 +283,8 @@ body {
     border-radius: 10px;
     font-size: 1.1rem;
     background-color: var(--bg-white);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
     min-width: 160px;
     cursor: pointer;
 }
@@ -293,13 +307,19 @@ body {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow);
-    transition: all 0.3s;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s, box-shadow 0.3s;
     cursor: pointer;
 }
 
 .recipe-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-lg);
+}
+
+.recipe-card:focus-within { /* A11y: focus state for card container */
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px;
 }
 
 /* Recipe image styling is handled in the recipe-card section below */
@@ -488,7 +508,8 @@ body {
     padding: 2rem;
     background-color: var(--bg-light);
     border-radius: 12px;
-    transition: transform 0.3s;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .feature:hover {
@@ -513,7 +534,7 @@ body {
 /* Footer */
 .footer {
     background-color: var(--text-dark);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     text-align: center;
     padding: 2rem 0;
 }
@@ -559,13 +580,13 @@ body {
     padding: 2rem;
     margin: 2rem 0;
     text-align: center;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .trending-header h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .trending-header p {
@@ -601,14 +622,15 @@ body {
 
 .trending-section .btn-secondary {
     background-color: rgba(255, 255, 255, 0.2);
-    border: 2px solid white;
-    color: white;
+    border: 2px solid var(--bg-white); /* Use variable for consistency */
+    color: var(--bg-white); /* Use variable for consistency */
     font-weight: 600;
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .trending-section .btn-secondary:hover {
-    background-color: white;
+    background-color: var(--bg-white); /* Use variable for consistency */
     color: var(--primary);
     transform: translateY(-2px);
 }
@@ -637,7 +659,7 @@ body {
     display: block;
     font-size: 2.5rem;
     font-weight: bold;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     line-height: 1;
 }
 
@@ -651,13 +673,14 @@ body {
 /* New Recipe Badge */
 .new-recipe-badge {
     background: linear-gradient(45deg, #ff6b6b, #ffd43b);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.75rem;
     font-weight: 600;
     margin-left: 0.5rem;
-    animation: pulse 2s infinite;
+    /* IMPROVEMENT: Changed infinite to 3 iterations */
+    animation: pulse 2s ease-in-out 3; 
 }
 
 @keyframes pulse {
@@ -730,7 +753,7 @@ body {
 
 .tag {
     background: var(--secondary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -777,7 +800,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     background: var(--primary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.4rem 1rem;
     font-size: 0.85rem;
     font-weight: 700;
@@ -793,9 +816,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, 
-        rgba(255, 107, 107, 0.05) 0%, 
-        rgba(78, 205, 196, 0.05) 100%);
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.1) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
     opacity: 1;
     border-radius: 10px;
     z-index: -1;
@@ -840,7 +866,7 @@ body {
 .footer-ad {
     margin: 0 0 2rem 0;
     background: linear-gradient(135deg, #343a40 0%, #495057 100%);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .footer-ad .ad-label {
@@ -888,14 +914,14 @@ body {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .spinner {
     width: 24px;
     height: 24px;
     border: 3px solid rgba(255, 255, 255, 0.3);
-    border-top: 3px solid white;
+    border-top: 3px solid var(--bg-white); /* Use variable for consistency */
     border-radius: 50%;
     animation: spin 1s linear infinite;
 }
@@ -963,7 +989,7 @@ body {
     top: 10px;
     right: 10px;
     background: var(--secondary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 4px 8px;
     border-radius: 12px;
     font-size: 0.75rem;
@@ -978,7 +1004,7 @@ body {
     right: 20px;
     padding: 15px 20px;
     border-radius: 5px;
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     font-weight: 500;
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -1035,6 +1061,12 @@ body {
         flex-direction: column;
         gap: 1rem;
         align-items: center;
+    }
+    
+    /* IMPROVEMENT: Ensure stats take full width on mobile */
+    .hero-stats .stat {
+        width: 100%;
+        padding: 0.5rem 0; 
     }
 
     .stat-number {
@@ -1132,7 +1164,7 @@ body {
 /* Location and Weather Bar */
 .location-bar {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.75rem 0;
     font-size: 0.9rem;
 }
@@ -1161,13 +1193,14 @@ body {
 
 .location-btn {
     background: rgba(255, 255, 255, 0.2);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     border: 1px solid rgba(255, 255, 255, 0.3);
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
     cursor: pointer;
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: background-color 0.3s ease;
 }
 
 .location-btn:hover {
@@ -1207,7 +1240,8 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -1217,20 +1251,25 @@ body {
 
 .unit-btn:hover {
     background: var(--primary);
-    color: var(--bg-white);
+    color: var(--bg-white); /* Use variable for consistency */
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 
 .unit-btn:hover .temp-unit,
 .unit-btn:hover .weight-unit {
-    color: var(--bg-white);
+    color: var(--bg-white); /* Use variable for consistency */
 }
 
 .unit-btn .temp-unit,
 .unit-btn .weight-unit {
     font-weight: 600;
     color: var(--primary);
+}
+/* A11y: Add focus state */
+.unit-btn:focus {
+    outline: 3px solid var(--secondary);
+    outline-offset: 2px;
 }
 
 /* Settings Panel */
@@ -1284,7 +1323,8 @@ body {
     font-size: 1rem;
     background: var(--bg-white);
     color: var(--text-dark);
-    transition: border-color 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .setting-group select:focus {
@@ -1324,7 +1364,8 @@ body {
     border-radius: 12px;
     padding: 1.5rem;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
 }
@@ -1565,7 +1606,7 @@ body {
     text-align: center;
     padding: 3rem 0;
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     margin: -2rem -1rem 3rem -1rem;
     border-radius: 0 0 20px 20px;
 }
@@ -1599,12 +1640,13 @@ body {
 }
 
 .recipe-card {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
@@ -1619,7 +1661,7 @@ body {
     top: 1rem;
     right: 1rem;
     background: var(--primary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -1670,7 +1712,7 @@ body {
 
 .tag {
     background: var(--primary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -1685,12 +1727,13 @@ body {
 }
 
 .subcategory-card {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
 }
 
@@ -1721,7 +1764,7 @@ body {
 .tips-grid,
 .office-grid,
 .family-grid,
-.techniques-grid,
+.technique-grid,
 .sides-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -1735,11 +1778,12 @@ body {
 .family-item,
 .technique-item,
 .side-item {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 8px;
     padding: 1.5rem;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .international-item:hover,
@@ -1787,7 +1831,8 @@ body {
     padding: 1.5rem;
     text-align: center;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .quick-item:hover {
@@ -1821,7 +1866,7 @@ body {
 }
 
 .partnership-type {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 8px;
     padding: 1.5rem;
     border: 1px solid var(--border);
@@ -1847,14 +1892,14 @@ body {
 }
 
 .trending-recipe {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 8px;
     padding: 1rem;
     border: 1px solid var(--border);
     display: flex;
     align-items: center;
     gap: 1rem;
-    transition: all 0.3s ease;
+    transition: box-shadow 0.3s ease;
 }
 
 .trending-recipe:hover {
@@ -1863,7 +1908,7 @@ body {
 
 .trending-rank {
     background: var(--primary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
@@ -1894,7 +1939,7 @@ body {
 }
 
 .contact-form {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 12px;
     padding: 2rem;
     border: 1px solid var(--border);
@@ -1943,7 +1988,7 @@ body {
 }
 
 .contact-info {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 12px;
     padding: 2rem;
     border: 1px solid var(--border);
@@ -1995,7 +2040,7 @@ body {
 }
 
 .faq-item {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 8px;
     margin-bottom: 1rem;
     border: 1px solid var(--border);
@@ -2027,12 +2072,13 @@ body {
 }
 
 .cuisine-card {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .cuisine-card:hover {
@@ -2060,7 +2106,7 @@ body {
 
 .recipe-count {
     background: var(--primary);
-    color: white;
+    color: var(--bg-white); /* Use variable for consistency */
     padding: 0.25rem 0.75rem;
     border-radius: 15px;
     font-size: 0.8rem;
@@ -2078,11 +2124,12 @@ body {
 
 .mealprep-item,
 .dietary-card {
-    background: white;
+    background: var(--bg-white); /* Use variable for consistency */
     border-radius: 8px;
     padding: 1.5rem;
     border: 1px solid var(--border);
-    transition: all 0.3s ease;
+    /* IMPROVEMENT: Specific transitions for performance */
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .mealprep-item:hover,
@@ -2155,7 +2202,7 @@ body {
     }
 }
 /* =======================
-   NAV DROP DOWN STYLES (REQUIRED FOR AD PAGES)
+   NAV DROP DOWN STYLES
    ======================= */
 
 .nav-dropdown {
@@ -2164,13 +2211,12 @@ body {
 }
 
 .dropdown-toggle {
-    /* تنسيق الزر ليتطابق مع nav-link */
     background: none;
     border: none;
     cursor: pointer;
     font-size: 1rem;
     padding: 0.5rem 0;
-    margin-right: -1rem; /* لتعويض المسافة بين الروابط */
+    margin-right: -1rem;
     display: flex;
     align-items: center;
     gap: 0.25rem;
@@ -2178,6 +2224,11 @@ body {
     font-weight: 500;
     transition: color 0.3s;
     border-bottom: 2px solid transparent; 
+}
+/* A11y: Add focus state */
+.dropdown-toggle:focus {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
 }
 
 .dropdown-toggle:hover,
@@ -2205,6 +2256,7 @@ body {
     border: 1px solid var(--border);
     opacity: 0;
     transform: translateY(10px);
+    /* IMPROVEMENT: Specific transitions for performance */
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
@@ -2237,7 +2289,6 @@ body {
 
 /* إصلاح الترتيب في شريط التنقل للهواتف (Mobile) */
 @media (max-width: 768px) {
-    /* تأكد أن هذه القواعد موجودة في ميديا كويري 768px في ملفك */
     .nav {
         flex-direction: column;
         align-items: center;
