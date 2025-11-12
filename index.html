@@ -39,9 +39,6 @@
     <link rel="apple-touch-icon" href="favicon-chef-180x180.png">
     <link rel="icon" type="image/svg+xml" href="favicon-chef-animated.svg">
     
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
-            crossorigin="anonymous"></script>
-    
     <link rel="preload" href="style.css" as="style">
     <link rel="preload" href="script.js" as="script">
     
@@ -51,7 +48,7 @@
     {
         "@context": "https://schema.org",
         "@type": "WebSite",
-        "name": "Recipe Website",
+        "name": "PlateUp",
         "description": "Discover world-class recipes from around the globe",
         "url": "https://recipe-website-v2.onrender.com",
         "potentialAction": {
@@ -61,7 +58,7 @@
         },
         "publisher": {
             "@type": "Organization",
-            "name": "Recipe Website",
+            "name": "PlateUp",
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://recipe-website-v2.onrender.com/favicon.png"
@@ -74,7 +71,7 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Recipe Website",
+        "name": "PlateUp",
         "description": "A modern recipe website featuring world cuisines",
         "url": "https://recipe-website-v2.onrender.com",
         "foundingDate": "2024",
@@ -116,6 +113,18 @@
                     <a href="#home" class="nav-link active">Home</a>
                     <a href="#recipes" class="nav-link">Recipes</a>
                     <a href="#about" class="nav-link">About</a>
+                    
+                    <div class="nav-dropdown">
+                        <button class="nav-link dropdown-toggle">
+                            المزيد <span class="dropdown-icon">▼</span>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a href="privacy-policy.html" class="dropdown-item">سياسة الخصوصية</a>
+                            <a href="terms-of-use.html" class="dropdown-item">الشروط والأحكام</a>
+                            <a href="contact.html" class="dropdown-item">اتصل بنا</a>
+                        </div>
+                    </div>
+                    
                 </nav>
                 <div class="header-controls">
                     <div class="unit-selector">
@@ -194,18 +203,9 @@
                     </div>
                 </div>
                 
-                <div class="ad-container hero-ad">
+                <div class="ad-container hero-ad" style="display: none;">
                     <div class="ad-label">Advertisement</div>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-XXXXXXXXXX"
-                         data-ad-slot="XXXXXXXXXX"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                    </div>
                 
                 <button class="btn btn-primary" onclick="scrollToRecipes()">
                     Explore Recipes
@@ -305,19 +305,10 @@
                 </select>
             </div>
 
-            <div class="ads-container">
+            <div class="ads-container" style="display: none;">
                 <div class="ad-container sidebar-ad">
                     <div class="ad-label">Advertisement</div>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-XXXXXXXXXX"
-                         data-ad-slot="XXXXXXXXXX"
-                         data-ad-format="auto"
-                         data-full-width-responsive="false"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                    </div>
             </div>
 
             <div class="trending-section">
@@ -352,9 +343,9 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title">About Recipe Hub</h2>
+                <h2 class="section-title">About PlateUp</h2>
                 <p class="about-text">
-                    Recipe Hub is a simple and user-friendly platform that brings together the best recipes 
+                    PlateUp is a simple and user-friendly platform that brings together the best recipes 
                     from various world cuisines. We aim to help cooking enthusiasts discover new recipes 
                     and improve their culinary skills.
                 </p>
@@ -385,40 +376,21 @@
             <div id="recipeDetails">
                 </div>
             
-            <div class="modal-ad-container">
+            <div class="modal-ad-container" style="display: none;">
                 <div class="ad-container modal-ad">
                     <div class="ad-label">Advertisement</div>
-                    <ins class="adsbygoogle"
-                         style="display:block"
-                         data-ad-client="ca-pub-XXXXXXXXXX"
-                         data-ad-slot="XXXXXXXXXX"
-                         data-ad-format="auto"
-                         data-full-width-responsive="true"></ins>
-                    <script>
-                         (adsbygoogle = window.adsbygoogle || []).push({});
-                    </script>
-                </div>
+                    </div>
             </div>
         </div>
     </div>
 
     <footer class="footer">
-        <div class="ad-container footer-ad">
+        <div class="ad-container footer-ad" style="display: none;">
             <div class="ad-label">Advertisement</div>
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
-        </div>
+            </div>
         
         <div class="container">
             <p>&copy; 2024 جميع الحقوق محفوظة لـ PlateUp.</p>
-            
             <p>وصفات عالمية بلمسة عربية</p>
         </div>
     </footer>
