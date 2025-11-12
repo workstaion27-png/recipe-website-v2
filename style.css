@@ -2154,3 +2154,127 @@ body {
         padding: 1.5rem;
     }
 }
+/* =======================
+   NAV DROP DOWN STYLES (REQUIRED FOR AD PAGES)
+   ======================= */
+
+.nav-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle {
+    /* تنسيق الزر ليتطابق مع nav-link */
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    margin-right: -1rem; /* لتعويض المسافة بين الروابط */
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: var(--text-gray); 
+    font-weight: 500;
+    transition: color 0.3s;
+    border-bottom: 2px solid transparent; 
+}
+
+.dropdown-toggle:hover,
+.nav-dropdown:hover .dropdown-toggle {
+    color: var(--primary);
+    border-bottom-color: var(--primary);
+}
+
+.dropdown-icon {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+/* القائمة المنسدلة نفسها */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: var(--bg-white);
+    min-width: 180px;
+    box-shadow: var(--shadow-lg);
+    z-index: 110;
+    border-radius: 8px;
+    padding: 8px 0;
+    border: 1px solid var(--border);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* نمط روابط القائمة المنسدلة */
+.dropdown-item {
+    color: var(--text-dark);
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    text-align: right;
+    font-size: 0.95rem;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: var(--bg-light);
+    color: var(--primary);
+}
+
+/* عند تمرير الماوس فوق زر القائمة، تظهر القائمة */
+.nav-dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-dropdown:hover .dropdown-toggle .dropdown-icon {
+    transform: rotate(180deg);
+}
+
+/* إصلاح الترتيب في شريط التنقل للهواتف (Mobile) */
+@media (max-width: 768px) {
+    /* تأكد أن هذه القواعد موجودة في ميديا كويري 768px في ملفك */
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .nav-dropdown {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .dropdown-toggle {
+        width: 100%;
+        justify-content: center;
+        margin-right: 0;
+    }
+    
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        right: auto;
+        border: none;
+        box-shadow: none;
+        border-radius: 0;
+        background-color: transparent;
+    }
+    
+    .dropdown-item {
+        text-align: center;
+        padding: 5px 15px;
+        background-color: var(--bg-light);
+        border-radius: 4px;
+        margin: 4px 0;
+    }
+
+    .dropdown-item:hover {
+        background-color: var(--primary);
+        color: var(--bg-white);
+    }
+}
